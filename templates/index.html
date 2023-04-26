@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Oncology Healthcare Webapp</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    
+
+
+  </head>
+
+  <!-- jQuery Plugin -->
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.3.min.js"></script>
+
+<!-- Preloader -->
+<script type="text/javascript">
+    //<![CDATA[
+        $(window).on('load', function() { // makes sure the whole site is loaded 
+            $('#status').fadeOut(); // will first fade out the loading animation 
+            $('#preloader').delay(350).fadeOut('slow'); // will fade out the white DIV that covers the website. 
+            $('body').delay(350).css({'overflow':'visible'});
+          })
+    //]]>
+</script>
+
+  <body>
+
+    
+    <!--HTML for preloader -->
+
+    <div id="preloader">
+      <div id="status">&nbsp;</div>
+    </div>
+
+    <!-- wrapping the entire body content to create an effect for preloader -->
+    <div class="wrapper">
+
+      <nav class="navbar navbar-expand-lg navbar-default navbar-light navbar-inverse fixed-top" style="background-color: #ebf0f2;">
+
+        <!-- <div class="container"> -->
+      <!-- lets start with the logo first -->
+          <img src="https://www.kindpng.com/picc/m/46-468037_human-brain-clipart-png-brain-logo-transparent-png.png" height="50px" width="50px" alt="">
+          <p>&nbsp;&nbsp;&nbsp;&nbsp</p>
+          <div class="navbar-header">
+
+            <!-- <img src="https://scalebranding.com/wp-content/uploads/2020/05/natural-brain-01.png" height="40px" width="40px" alt=""> -->
+
+            <a href="#" class="navbar-brand">Oncology Healthcare</a>
+
+          </div>
+
+          <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp</p>
+
+          <!-- &nbsp is used to add whitespaces -->
+
+          <ul class="nav navbar-nav navbar-brand">
+
+
+            <li class="nav-item">
+              <a href="/" class="nav-link">Home</a>
+            </li>
+
+            <li class="nav-item">
+              <a href="/info/" class="nav-link">Info</a>
+            </li>
+
+            
+            <li class="nav-item">
+              <a href="/contact/" class="nav-link">Contact</a>
+            </li>
+
+            <li class="nav-item">
+              <a href="/clinics/" class="nav-link">Clinics</a>
+            </li>
+
+            <li class="nav-item">
+              <a href="/about/" class="nav-link">About</a>
+            </li>
+
+
+
+
+
+
+          </ul>
+
+          <form class="form-inline my-2 my-lg-0 ml-auto">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+
+        <!-- </div> -->
+      </nav>
+
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+
+      <!-- background video -->
+      <video autoplay muted loop id="myVideo">
+      <source src="https://f.hubspotusercontent40.net/hubfs/4132242/Cambridge%202021/homepage/GettyImages-670560766.mov" type="video/mp4">
+      </video>
+
+        <div class="bg container">
+
+    <strong>
+          <h1 class="display-4"><strong>Welcome To Our Oncology HealthCare Website!</strong></h1>
+          <p class="lead">Many different types of primary brain tumors exist. Some brain tumors aren't cancerous. These are called noncancerous brain tumors or benign brain tumors. Noncancerous brain tumors may grow over time and press on the brain tissue. Other brain tumors are brain cancers, also called malignant brain tumors. Brain cancers may grow quickly. The cancer cells can invade and destroy the brain tissue.</p>
+          <p class ='lead'>Our website provides you with the information whether the tumour is cancerous or not</p>
+          <hr class="my-4">
+          <br>
+
+          <div class="row">
+
+            <div class="col-lg-4 col-3 px-0"><img class="img-fluid pic" src="https://images.pexels.com/photos/356040/pexels-photo-356040.jpeg?auto=compress&cs=tinysrgb&w=600" alt=""></div>
+            <div class="col-lg-4 col-3 px-0"><img class="img-fluid pic" src="https://images.pexels.com/photos/6011602/pexels-photo-6011602.jpeg?auto=compress&cs=tinysrgb&w=600" alt=""></div>
+            <div class="col-lg-4 col-3 px-0"><img class="img-fluid pic" src="https://images.pexels.com/photos/724994/pexels-photo-724994.jpeg?auto=compress&cs=tinysrgb&w=600" alt=""></div>
+
+          </div>
+          <br>
+          <br>
+          <p class="lead">Please provide your tumor MRI image below</p>
+          <form class="p-3 text-center" action="/" method="post" enctype="multipart/form-data">
+            <input class="form-control" type="file" name="imagefile" value="Choose image">
+            <br>
+            <br>
+            <input id="but" class="btn btn-primary mt-3 btn-lg" type="submit" value="Submit">
+
+          </form>
+
+                  {% if prediction %}
+                  <img src="{{image_path}}" height="300px" width="300px" class="center" style="border: 5px solid white;">
+                  <br>
+                  <div class="container">
+
+                    <h4 style = "text-align: center;"><strong> Diagnosis : <i> {{prediction}} </i> </strong> </h4>
+                    <!-- <h2 class="lead"> Your array : <i class="lead"> {{my_arr}} </i> </h2> our prediction array which has 4 values--> 
+
+                  </div>
+                  
+
+                  {% endif %}
+
+          <br>
+          <!--<a class="btn btn-primary" href="/lol/" role="button">Learn more</a> -->
+    </strong>
+
+
+
+
+        </div>
+
+    </div>
+
+    <style media="screen">
+
+      .navbar{
+        opacity: 0.9;
+        color: white;
+      }
+
+      #myVideo {
+
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        min-width: 100%;
+        min-height: 100%;
+        z-index:-1;
+      }
+
+      /* .content{
+        position: fixed;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.5);
+        color: #050303;
+        width: 100%;
+        padding: 20px;
+        text-align: center;
+
+      } */
+
+      .bg{
+        color: white;
+
+      }
+
+      h1{
+        font-style: italic;
+        text-decoration-style: solid;
+      }
+
+      .center{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .pic{
+        height: 250px;
+        width: 380px;
+        margin: auto;
+        border: 5px solid rgba(0, 0, 0, .4);
+      }
+
+      
+
+      #preloader {
+        position: fixed;
+        top:0;
+        left:0;
+        right:0;
+        bottom:0;
+        background-color:#fff; /* change if the mask should have another color then white */
+        z-index:99; /* makes sure it stays on top */
+      }
+      
+      #status {
+        width:200px;
+        height:200px;
+        position:absolute;
+        left:50%; /* centers the loading animation horizontally one the screen */
+        top:50%; /* centers the loading animation vertically one the screen */
+        background-image:url("https://media.tenor.com/-n8JvVIqBXkAAAAM/dddd.gif"); /* path to your loading animation */
+        background-repeat:no-repeat;
+        background-position:center;
+        margin:-100px 0 0 -100px; /* is width and height divided by two */
+      }
+
+    </style>
+
+
+    
+
+
+
+  </body>
+</html>

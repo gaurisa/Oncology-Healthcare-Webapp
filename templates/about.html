@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>About Page</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+  </head>
+
+<!-- jQuery Plugin -->
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.3.min.js"></script>
+
+<!-- Preloader -->
+<script type="text/javascript">
+    //<![CDATA[
+        $(window).on('load', function() { // makes sure the whole site is loaded 
+            $('#status').fadeOut(); // will first fade out the loading animation 
+            $('#preloader').delay(350).fadeOut('slow'); // will fade out the white DIV that covers the website. 
+            $('body').delay(350).css({'overflow':'visible'});
+          })
+    //]]>
+</script>
+
+  <body>
+
+     <!--HTML for preloader -->
+
+     <div id="preloader">
+      <div id="status">&nbsp;</div>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-default navbar-light navbar-inverse fixed-top" style="background-color: #ebf0f2;">
+
+      <!-- <div class="container"> -->
+    <!-- lets start with the logo first -->
+        <img src="https://www.kindpng.com/picc/m/46-468037_human-brain-clipart-png-brain-logo-transparent-png.png" height="50px" width="50px" alt="">
+        <p>&nbsp;&nbsp;&nbsp;&nbsp</p>
+        <div class="navbar-header">
+
+          <!-- <img src="https://scalebranding.com/wp-content/uploads/2020/05/natural-brain-01.png" height="40px" width="40px" alt=""> -->
+
+          <a href="#" class="navbar-brand">Oncology Healthcare</a>
+
+        </div>
+
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp</p>
+
+        <!-- &nbsp is used to add whitespaces -->
+
+        <ul class="nav navbar-nav navbar-brand">
+
+
+          <li class="nav-item">
+            <a href="/" class="nav-link">Home</a>
+          </li>
+
+          <li class="nav-item">
+            <a href="/info/" class="nav-link">Info</a>
+          </li>
+
+          
+          <li class="nav-item">
+            <a href="/contact/" class="nav-link">Contact</a>
+          </li>
+
+          <li class="nav-item">
+            <a href="/clinics/" class="nav-link">Clinics</a>
+          </li>
+
+          <li class="nav-item">
+            <a href="/about/" class="nav-link">About</a>
+          </li>
+
+
+
+
+
+        </ul>
+
+        <form class="form-inline my-2 my-lg-0 ml-auto">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+
+      <!-- </div> -->
+    </nav>
+
+    <br>
+    <br>
+    <br>
+
+    <video autoplay muted loop class="abt" >
+      <source src="https://vod-progressive.akamaized.net/exp=1682008227~acl=%2Fvimeo-prod-skyfire-std-us%2F01%2F4612%2F18%2F473060454%2F2107968869.mp4~hmac=149747adadba05c6358bd7322a200b3cb8a4c803d6195112edbdca61d6e8a1af/vimeo-prod-skyfire-std-us/01/4612/18/473060454/2107968869.mp4" type="video/mp4">
+    </video>
+
+    <div class="container jumbotron">
+
+      <h1 class="text-center display-4"><strong>ABOUT THE WEBSITE</strong></h1>
+      <br>
+      <br>
+      <strong>
+
+        <p>Usually the primary Procedure for the Diagnosis of a Suspected tumor is an MRI Scan of the brain. </p>
+        <p>Brain tumors can happen in the brain tissue. Brain tumors also can happen near the brain tissue. Nearby locations include nerves, the pituitary gland, the pineal gland, and the membranes that cover the surface of the brain.</p>
+        <br>
+        <p>We have created this webapp By combining Three Major Technologies of computer science which are MACHINE LEARNING , WEB DEVELOPMENT AND WEB SCRAPING</p>
+        <p>So We Basically have Created a Healthcare webapp wherein you can Diagnose whether the tumor is benign or Malignant and if it ias Malignant , then what is it's location? All such Questions are answered by our web app</p>
+        <p>After the Diagnosis , Every Patient wants to seek the best Possible Treatment that he/she can get</p>
+        <p>We have Personalised the best available Oncologists comnsidering your location,Budget and many more aspects</p>
+
+        <p>This website is developed as our Final year Major Project of academic year 2022-2023</p>
+        <br>
+
+        <h4><strong>CONTRIBUTERS:-</strong></h4>
+        <p> Swati Parma</p>
+        <p>Simran Kamble</p>
+        <p>Manasi Shinde</p>
+        <p>Gauri Sawant</p>
+
+      </strong>
+      
+
+    </div>
+
+    <style media="screen">
+
+      .navbar{
+        opacity: 0.9;
+        color: white;
+      }
+
+      h1{
+        font-style: italic;
+        text-decoration-style: solid;
+      }
+
+      .abt{
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        min-width: 100%;
+        min-height: 100%;
+        z-index:-1;
+
+      }
+
+      .jumbotron{
+
+        width:850px;
+        background: rgba(204, 204, 204, 0.8);
+      }
+
+      #preloader {
+        position: fixed;
+        top:0;
+        left:0;
+        right:0;
+        bottom:0;
+        background-color:#fff; /* change if the mask should have another color then white */
+        z-index:99; /* makes sure it stays on top */
+      }
+      
+      #status {
+        width:200px;
+        height:200px;
+        position:absolute;
+        left:50%; /* centers the loading animation horizontally one the screen */
+        top:50%; /* centers the loading animation vertically one the screen */
+        background-image:url("https://media.tenor.com/-n8JvVIqBXkAAAAM/dddd.gif"); /* path to your loading animation */
+        background-repeat:no-repeat;
+        background-position:center;
+        margin:-100px 0 0 -100px; /* is width and height divided by two */
+      }
+
+
+
+    </style>
+  </body>
+</html>

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Clinics Page</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+  </head>
+
+    <!-- jQuery Plugin -->
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.3.min.js"></script>
+
+<!-- Preloader -->
+<script type="text/javascript">
+    //<![CDATA[
+        $(window).on('load', function() { // makes sure the whole site is loaded 
+            $('#status').fadeOut(); // will first fade out the loading animation 
+            $('#preloader').delay(350).fadeOut('slow'); // will fade out the white DIV that covers the website. 
+            $('body').delay(350).css({'overflow':'visible'});
+          })
+    //]]>
+</script>
+
+  <body>
+
+    <!--HTML for preloader -->
+
+    <div id="preloader">
+      <div id="status">&nbsp;</div>
+    </div>
+
+    <!-- wrapping the entire body content to create an effect for preloader -->
+    <div class="wrapper">
+
+      <nav class="navbar navbar-expand-lg navbar-default navbar-light navbar-inverse fixed-top" style="background-color: #ebf0f2;">
+
+        <!-- <div class="container"> -->
+      <!-- lets start with the logo first -->
+          <img src="https://www.kindpng.com/picc/m/46-468037_human-brain-clipart-png-brain-logo-transparent-png.png" height="50px" width="50px" alt="">
+          <p>&nbsp;&nbsp;&nbsp;&nbsp</p>
+          <div class="navbar-header">
+
+            <!-- <img src="https://scalebranding.com/wp-content/uploads/2020/05/natural-brain-01.png" height="40px" width="40px" alt=""> -->
+
+            <a href="#" class="navbar-brand">Oncology Healthcare</a>
+
+          </div>
+
+          <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp</p>
+
+          <!-- &nbsp is used to add whitespaces -->
+
+          <ul class="nav navbar-nav navbar-brand">
+
+
+            <li class="nav-item">
+              <a href="/" class="nav-link">Home</a>
+            </li>
+
+            <li class="nav-item">
+              <a href="/info/" class="nav-link">Info</a>
+            </li>
+
+            
+            <li class="nav-item">
+              <a href="/contact/" class="nav-link">Contact</a>
+            </li>
+
+            <li class="nav-item">
+              <a href="/clinics/" class="nav-link">Clinics</a>
+            </li>
+
+            <li class="nav-item">
+              <a href="/about/" class="nav-link">About</a>
+            </li>
+
+
+
+
+
+
+          </ul>
+
+          <form class="form-inline my-2 my-lg-0 ml-auto">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+
+        <!-- </div> -->
+      </nav>
+
+      <br>
+      <br>
+      <br>
+      <br>
+
+      <img id ="bgimg" src="https://images.pexels.com/photos/4386464/pexels-photo-4386464.jpeg?auto=compress&cs=tinysrgb&w=600">
+
+      <img id ="bgimg2" src="https://images.pexels.com/photos/3279197/pexels-photo-3279197.jpeg?auto=compress&cs=tinysrgb&w=600">
+
+
+
+    
+  <div class="container">
+
+    <h2 class="display-4"><strong>Showing Top Results in {{loc}} !</strong></h2>
+    <br>
+    <br>
+
+    <!-- Showing our scraped results which is a nested list so we are looping through it remember flask allows usage of for loop in the html -->
+    {% for doc in Details: %}
+
+    <div class="jumbotron row">
+
+      <div class="col-lg-4 col-2 px-2">
+        <img id = "doc_icon" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKJB9Nxo7xKPpSpAghaFBzg2drKdxtqHYEHNu3K6M1lz0ZiSBuSJLcbHL-qYYoeH1Gv4k&usqp=CAU" >
+      </div>
+
+      <div class="col-lg-8 col-2 px-2">
+        <h2>Name :- {{doc[0]}}</h5>
+        <br>
+        <h5>Profession :- <a href="https://www.urmc.rochester.edu/highland/departments-centers/neurosurgery/what-is-a-neurosurgeon.aspx">{{doc[1]}}</a></h5>
+        <h5>Experience in years :- {{doc[2]}}</h5>
+        <h5>Location :- {{doc[3]}}</h5>
+        <h5>Hospital :- {{doc[4]}}</h5>
+        <h5>Consultation Fees :- {{doc[5]}}</h5>
+        <br>
+      </div>
+      
+    </div>
+  
+    {% endfor %}
+
+
+  </div>
+    
+  <style media="screen">
+
+
+    #doc_icon{
+
+      height: 220px;
+      width: 200px;
+      border: 6px solid #086880;
+      padding-top: 10px;
+      padding-right: 10px;
+      padding-bottom: 10px;
+      padding-left: 10px
+    }
+
+    h1{
+      color: #086880;
+      font-style: italic;
+      text-decoration-style: solid;
+    }
+
+    h2{
+      font-style: italic;
+      text-decoration-style: solid;
+      color: #086880;
+    }
+
+    h5{
+      color: #086880;
+    }
+
+    .navbar{
+        opacity: 0.9;
+        color: white;
+      }
+
+
+      #preloader {
+        position: fixed;
+        top:0;
+        left:0;
+        right:0;
+        bottom:0;
+        background-color:#fff; /* change if the mask should have another color then white */
+        z-index:99; /* makes sure it stays on top */
+      }
+      
+      #status {
+        width:200px;
+        height:200px;
+        position:absolute;
+        left:50%; /* centers the loading animation horizontally one the screen */
+        top:50%; /* centers the loading animation vertically one the screen */
+        background-image:url("https://media.tenor.com/-n8JvVIqBXkAAAAM/dddd.gif"); /* path to your loading animation */
+        background-repeat:no-repeat;
+        background-position:center;
+        margin:-100px 0 0 -100px; /* is width and height divided by two */
+      }
+
+      #bgimg{
+        position: fixed;
+        right: 50%;
+        bottom: 0;
+        min-width: 50%;
+        min-height: 100%;
+        z-index:-1;
+
+      }
+
+      #bgimg2{
+
+        position: fixed;
+        left: 50%;
+        bottom: 0;
+        min-width: 50%;
+        min-height: 100%;
+        z-index:-1;
+
+      }
+      
+      .jumbotron{
+
+        width: 800px;
+        height: 350px;
+        opacity: 0.9;
+  
+        
+      }
+
+    
+  </body>
+</html>
